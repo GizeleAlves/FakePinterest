@@ -16,7 +16,7 @@ def homepage():
         if usuario and bcrypt.check_password_hash(usuario.senha, formlogin.senha.data):
             login_user(usuario)
             return redirect(url_for("perfil", id_usuario=usuario.id))
-    return render_template("homepage.html", form=formlogin)
+    return render_template("index.html", form=formlogin)
 
 @app.route("/criarconta", methods=["GET","POST"])
 def criarconta():
